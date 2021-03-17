@@ -13,16 +13,16 @@ import useStyles from "./styles";
 const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
   const classes = useStyles();
   return (
-    <Card>
+    <Card className="cart-item">
       <CardMedia
         image={item.media.source}
         alt={item.name}
         className={classes.media}
       />
       <CardContent className={classes.cardContent}>
-        <Typography variant="h4">{
-        item.name.length >= 11 ? item.name.slice(0, 11) + "..." : item.name
-        }</Typography>
+        <Typography variant="h4">
+          {item.name.length >= 11 ? item.name.slice(0, 11) + "..." : item.name}
+        </Typography>
         <Typography variant="h5">
           {item.line_total.formatted_with_symbol}
         </Typography>
